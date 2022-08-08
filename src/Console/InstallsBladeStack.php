@@ -18,9 +18,9 @@ trait InstallsBladeStack
             return [
                 '@tailwindcss/forms' => '^0.5.2',
                 'alpinejs' => '^3.4.2',
-                'autoprefixer' => '^10.4.2',
-                'postcss' => '^8.4.6',
-                'tailwindcss' => '^3.1.0',
+                'autoprefixer' => '^10.4.8',
+                'postcss' => '^8.4.14',
+                'tailwindcss' => '^3.1.8',
             ] + $packages;
         });
 
@@ -60,8 +60,8 @@ trait InstallsBladeStack
         $this->replaceInFile('/home', '/dashboard', app_path('Providers/RouteServiceProvider.php'));
 
         // Tailwind / Vite...
-        copy(__DIR__.'/../../stubs/default/tailwind.config.js', base_path('tailwind.config.js'));
-        copy(__DIR__.'/../../stubs/default/postcss.config.js', base_path('postcss.config.js'));
+        copy(__DIR__ . '/../../stubs/default/tailwind.config.cjs', base_path('tailwind.config.cjs'));
+        copy(__DIR__ . '/../../stubs/default/postcss.config.cjs', base_path('postcss.config.cjs'));
         copy(__DIR__.'/../../stubs/default/vite.config.js', base_path('vite.config.js'));
         copy(__DIR__.'/../../stubs/default/resources/css/app.css', resource_path('css/app.css'));
         copy(__DIR__.'/../../stubs/default/resources/js/app.js', resource_path('js/app.js'));

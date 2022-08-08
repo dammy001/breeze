@@ -25,10 +25,10 @@ trait InstallsInertiaStacks
                 '@inertiajs/progress' => '^0.2.7',
                 '@tailwindcss/forms' => '^0.5.2',
                 '@vitejs/plugin-vue' => '^3.0.0',
-                'autoprefixer' => '^10.4.2',
-                'postcss' => '^8.4.6',
-                'tailwindcss' => '^3.1.0',
-                'vue' => '^3.2.31',
+                'autoprefixer' => '^10.4.8',
+                'postcss' => '^8.4.14',
+                'tailwindcss' => '^3.1.8',
+                'vue' => '^3.2.37',
             ] + $packages;
         });
 
@@ -71,8 +71,8 @@ trait InstallsInertiaStacks
 
         // Tailwind / Vite...
         copy(__DIR__.'/../../stubs/default/resources/css/app.css', resource_path('css/app.css'));
-        copy(__DIR__.'/../../stubs/default/postcss.config.js', base_path('postcss.config.js'));
-        copy(__DIR__.'/../../stubs/inertia-common/tailwind.config.js', base_path('tailwind.config.js'));
+        copy(__DIR__ . '/../../stubs/default/postcss.config.cjs', base_path('postcss.config.cjs'));
+        copy(__DIR__.'/../../stubs/inertia-common/tailwind.config.cjs', base_path('tailwind.config.cjs'));
         copy(__DIR__.'/../../stubs/inertia-common/jsconfig.json', base_path('jsconfig.json'));
         copy(__DIR__.'/../../stubs/inertia-vue/vite.config.js', base_path('vite.config.js'));
         copy(__DIR__.'/../../stubs/inertia-vue/resources/js/app.js', resource_path('js/app.js'));
@@ -133,9 +133,9 @@ trait InstallsInertiaStacks
                 '@inertiajs/progress' => '^0.2.6',
                 '@tailwindcss/forms' => '^0.5.2',
                 '@vitejs/plugin-react' => '^2.0.0',
-                'autoprefixer' => '^10.4.2',
-                'postcss' => '^8.4.6',
-                'tailwindcss' => '^3.1.0',
+                'autoprefixer' => '^10.4.8',
+                'postcss' => '^8.4.14',
+                'tailwindcss' => '^3.1.8',
                 'react' => '^17.0.2',
                 'react-dom' => '^17.0.2',
             ] + $packages;
@@ -181,8 +181,8 @@ trait InstallsInertiaStacks
 
         // Tailwind / Vite...
         copy(__DIR__.'/../../stubs/default/resources/css/app.css', resource_path('css/app.css'));
-        copy(__DIR__.'/../../stubs/default/postcss.config.js', base_path('postcss.config.js'));
-        copy(__DIR__.'/../../stubs/inertia-common/tailwind.config.js', base_path('tailwind.config.js'));
+        copy(__DIR__ . '/../../stubs/default/postcss.config.cjs', base_path('postcss.config.cjs'));
+        copy(__DIR__ . '/../../stubs/inertia-common/tailwind.config.cjs', base_path('tailwind.config.cjs'));
         copy(__DIR__.'/../../stubs/inertia-common/jsconfig.json', base_path('jsconfig.json'));
         copy(__DIR__.'/../../stubs/inertia-react/vite.config.js', base_path('vite.config.js'));
         copy(__DIR__.'/../../stubs/inertia-react/resources/js/app.jsx', resource_path('js/app.jsx'));
@@ -191,7 +191,7 @@ trait InstallsInertiaStacks
             unlink(resource_path('js/app.js'));
         }
 
-        $this->replaceInFile('.vue', '.jsx', base_path('tailwind.config.js'));
+        $this->replaceInFile('.vue', '.jsx', base_path('tailwind.config.cjs'));
 
         if ($this->option('ssr')) {
             $this->installInertiaReactSsrStack();
